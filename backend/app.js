@@ -31,10 +31,10 @@ app.use("/api/v1", payment);
 // Middleware for errors
 app.use(errorMiddleware);
 
-app.use(express.static(path.resolve(__dirname, "../frontend/build")));
+app.use(express.static(path.resolve(__dirname, "../frontend/client/build")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+  res.sendFile(path.resolve(__dirname, "../frontend/client/build/index.html"));
 });
 
 module.exports = app;    
